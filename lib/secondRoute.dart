@@ -25,22 +25,19 @@ class SecondRoute extends StatelessWidget {
         ],
       ),
       onTap: () {
-        /**
-            Firestore.instance.runTransaction((transaction) async{
+        try {
+          Firestore.instance.runTransaction((transaction) async {
             DocumentSnapshot freshSnap =
             await transaction.get(document.reference);
+            print('freshsnap = ' + freshSnap['was'].toString());
             await transaction.update(freshSnap.reference, {
-            'was': freshSnap['was'] + 1,
+              'was': freshSnap['was'] + 1,
             });
-            });
-            });**/
-        Firestore.instance.runTransaction((transaction) async {
-          DocumentSnapshot freshSnap =
-          await transaction.get(document.reference);
-          await transaction.update(freshSnap.reference, {
-            'was': freshSnap['was'] + 1,
           });
-        });
+        } catch(err){
+          print(err.toString());
+        }
+
       },
     );
   }
