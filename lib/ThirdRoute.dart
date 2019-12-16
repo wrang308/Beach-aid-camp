@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_app_testing_coding/secondRoute.dart';
 import 'package:flutter_app_testing_coding/main.dart';
+import 'package:flutter_app_testing_coding/schema.dart';
 
 
 class ThirdRoute extends StatelessWidget {
@@ -55,6 +56,17 @@ class ThirdRoute extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => FifthRoute()),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text('Schema'),
+                onTap: () {
+                  // Update the state of the app.
+                  // ...
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SchemaRoute()),
                   );
                 },
               ),
