@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_app_testing_coding/secondRoute.dart';
 import 'package:flutter_app_testing_coding/main.dart';
+
+
 class ThirdRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -62,7 +64,10 @@ class ThirdRoute extends StatelessWidget {
         body: ListView(children: <Widget>[
           RaisedButton(
             onPressed: () {
-              //Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyHomePage()),
+              );
             },
             child: Text('Go back!'),
           ),

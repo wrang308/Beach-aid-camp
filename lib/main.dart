@@ -5,6 +5,8 @@ import 'package:flutter_app_testing_coding/ThirdRoute.dart';
 
 void main() => runApp(MyApp());
 
+int _counter = 0;
+
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -88,7 +90,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+
 
   void _incrementCounter() {
     setState(() {
@@ -124,7 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text('hej'),
       ),
       drawer: Drawer(
         // Add a ListView to the drawer. This ensures the user can scroll
@@ -184,7 +186,7 @@ class _MyHomePageState extends State<MyHomePage> {
               'You have pushed the button this many times:',
             ),
             Text(
-              '$_counter',
+              '$_counter'??'hej',
               style: Theme.of(context).textTheme.display1,
             ),
             FlatButton(
@@ -209,10 +211,8 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('Open route'),
               color: Colors.lightGreen,
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ThirdRoute()),
-                );
+                Navigator.pop(context);
+                
               },
             ),
           ],
@@ -256,6 +256,7 @@ class FifthRoute extends StatelessWidget {
         children: [
           Expanded(
             child: Text(
+              document.documentID +
               document['name'],
               style: Theme.of(context).textTheme.headline,
             ),
@@ -273,15 +274,7 @@ class FifthRoute extends StatelessWidget {
         ],
       ),
       onTap: () {
-        /**
-            Firestore.instance.runTransaction((transaction) async{
-            DocumentSnapshot freshSnap =
-            await transaction.get(document.reference);
-            await transaction.update(freshSnap.reference, {
-            'was': freshSnap['was'] + 1,
-            });
-            });
-            });**/
+
         Firestore.instance.runTransaction((transaction) async {
           DocumentSnapshot freshSnap =
           await transaction.get(document.reference);
