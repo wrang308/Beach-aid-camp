@@ -7,6 +7,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'Day.dart';
+import 'drawer.dart';
 
 class SchemaRoute extends StatefulWidget {
 
@@ -69,6 +70,10 @@ class _schemaState extends State<SchemaRoute> {
 
     return Scaffold(
       //removed
+        appBar: AppBar(
+          title: Text("Schema"),
+        ),
+      drawer: MyDrawer(),
         body: Container(
           child: FutureBuilder(
             future: loadPerson(),
@@ -92,13 +97,36 @@ class _schemaState extends State<SchemaRoute> {
 
                           if (index2 == 0){
 
-                            return
-                              ListTile( title: Text(snapshot.data.day[index].day));
+                            return new Container(
+                                child: ListTile(
+                                title: Text(snapshot.data.day[index].day,
+                                style: TextStyle(fontWeight: FontWeight.bold)),
+                                trailing: Text(snapshot.data.day[index].date),
+                              ),
+                                decoration:
+                            new BoxDecoration(
+                            border: new Border(
+                            bottom: new BorderSide(
+                              color: Colors.black87,
+                            )
+                          )
+                          )
+                          );
                           }
 
-                          return ListTile(
+                          return Container(
+                            child: ListTile(
                             title: Text(snapshot.data.day[index].activity[index2-1].desc),
-
+                            subtitle: Text(snapshot.data.day[index].activity[index2-1].starttime + '-' + snapshot.data.day[index].activity[index2-1].endtime),
+                          ),
+                              decoration:
+                              new BoxDecoration(
+                                  border: new Border(
+                                      bottom: new BorderSide(
+                                        color: Colors.grey[200],
+                                      )
+                                  )
+                              )
                           );
                         });
                   }
@@ -158,7 +186,7 @@ class _schemaState extends State<SchemaRoute> {
   @override
   void initState() {
     loadPerson();
-    getData();
+    //getData();
   }
 
 }
