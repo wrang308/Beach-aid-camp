@@ -8,15 +8,15 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'Day.dart';
 
-class GroupRoute extends StatefulWidget {
+class SchemaRoute extends StatefulWidget {
 
-  const GroupRoute({ Key key }) : super(key: key);
+  const SchemaRoute({ Key key }) : super(key: key);
 
-  _groupState createState() => _groupState();
+  _schemaState createState() => _schemaState();
 
 }
 
-class _groupState extends State<GroupRoute> {
+class _schemaState extends State<SchemaRoute> {
 
   Future<String> loadPersonFromAssets() async{
     var url = 'https://wrang308.github.io/json/schema.json';
