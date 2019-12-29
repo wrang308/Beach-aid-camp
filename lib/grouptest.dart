@@ -86,11 +86,19 @@ class _groupState extends State<GroupRoute> {
                 itemBuilder: (BuildContext context, int index){
 
                   return ListView.builder(
-                      itemCount: snapshot.data.day[index].activity.length,
+                      itemCount: snapshot.data.day[index].activity.length+1,
                       itemBuilder: (BuildContext context2, int index2)
                   {
-                    return Container(
-                      child: Text(snapshot.data.day[index].activity[index2].desc),
+
+                    if (index2 == 0){
+
+                      return
+                        ListTile( title: Text(snapshot.data.day[index].day));
+                    }
+
+                    return ListTile(
+                      title: Text(snapshot.data.day[index].activity[index2-1].desc),
+
                     );
                   });
                 }
