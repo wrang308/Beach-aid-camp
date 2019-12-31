@@ -26,21 +26,25 @@ class MyDrawer extends StatelessWidget {
             onTap: () {
               // Update the state of the app.
               // ...
-              Navigator.push(
+              Navigator.popUntil(context, ModalRoute.withName('/'));
+              Navigator.pushNamed(context, '/forth');
+              /**Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ForthRoute()),
-              );
+                MaterialPageRoute(builder: (context) => ForthRoute())
+              );**/
             },
           ),
           ListTile(
             title: Text('Item 2'),
             onTap: () {
               // Update the state of the app.
-              // ...
-              Navigator.push(
+              // ..
+              Navigator.popUntil(context, ModalRoute.withName('/'));
+              Navigator.pushNamed(context, '/second');
+             /** Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => SecondRoute()),
-              );
+              );*/
             },
           ),
           ListTile(
@@ -48,6 +52,10 @@ class MyDrawer extends StatelessWidget {
             onTap: () {
               // Update the state of the app.
               // ...
+              //Navigator.popUntil(context, ModalRoute.withName('/'));
+              /**Navigator.canPop(context);
+              Navigator.pushNamedAndRemoveUntil( context, '/fifth', ModalRoute.withName('/'));**/
+              Navigator.popUntil(context, ModalRoute.withName('/'));
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => FifthRoute()),
@@ -59,6 +67,8 @@ class MyDrawer extends StatelessWidget {
             onTap: () {
               // Update the state of the app.
               // ...
+              //Navigator.pushReplacementNamed(context, '/schema');
+              Navigator.popUntil(context, ModalRoute.withName('/'));
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => SchemaRoute()),
@@ -70,10 +80,27 @@ class MyDrawer extends StatelessWidget {
             onTap: () {
               // Update the state of the app.
               // ...
+              Navigator.popUntil(context, ModalRoute.withName('/'));
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => GroupRoute()),
               );
+            },
+          ),
+          ListTile(
+            title: Text('PoP'),
+            onTap: () {
+              // Update the state of the app.
+              // ...
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: Text('Heskan'),
+            onTap: () {
+              // Update the state of the app.
+              // ...
+Navigator.popUntil(context, ModalRoute.withName('/'));
             },
           ),
         ],

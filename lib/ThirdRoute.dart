@@ -4,6 +4,7 @@ import 'package:flutter_app_testing_coding/secondRoute.dart';
 import 'package:flutter_app_testing_coding/main.dart';
 import 'package:flutter_app_testing_coding/schema.dart';
 import 'package:flutter_app_testing_coding/grouptest.dart';
+import 'drawer.dart';
 
 
 class ThirdRoute extends StatelessWidget {
@@ -13,7 +14,8 @@ class ThirdRoute extends StatelessWidget {
         appBar: AppBar(
           title: Text("Third Route"),
         ),
-        drawer: Drawer(
+        drawer: MyDrawer(),
+       /** Drawer(
           // Add a ListView to the drawer. This ensures the user can scroll
           // through the options in the drawer if there isn't enough vertical
           // space to fit everything.
@@ -84,7 +86,7 @@ class ThirdRoute extends StatelessWidget {
               ),
             ],
           ),
-        ),
+        ),**/
         body: ListView(children: <Widget>[
           RaisedButton(
             onPressed: () {

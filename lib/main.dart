@@ -2,9 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_app_testing_coding/drawer.dart';
 import 'package:flutter_app_testing_coding/secondRoute.dart';
 import 'package:flutter_app_testing_coding/ThirdRoute.dart';
 import 'package:flutter_app_testing_coding/grouptest.dart';
+import 'schema.dart';
+import 'grouptest.dart';
 
 //000webhost 1 vxT3yD%NZsB7@ehxs%Cy
 //000webhost 2 eH@94oBGPD!d7#qb
@@ -31,8 +34,20 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.deepOrange,
       ),
-      home:
-          _buildPageView(), /**MyHomePage(title: 'Im trying to do stuff in the code'),**/
+      home: _buildPageView(), /**MyHomePage(title: 'Im trying to do stuff in the code'),**/
+
+      initialRoute: '/' ,
+      routes: {
+        // When navigating to the "/" route, build the FirstScreen widget.
+        //'/': (context) => _buildPageView(),
+        // When navigating to the "/second" route, build the SecondScreen widget.
+        '/second': (context) => SecondRoute(),
+        '/forth': (context) => ForthRoute(),
+        '/fifth': (context) => FifthRoute(),
+        '/schema': (context) => SchemaRoute(),
+        '/group': (context) => GroupRoute()
+      },
+
     );
   }
 }
@@ -298,6 +313,7 @@ class FifthRoute extends StatelessWidget {
       appBar: AppBar(
         title: Text("FifthRoute Route"),
       ),
+      drawer: MyDrawer(),
       body: StreamBuilder(
           stream: Firestore.instance.collection('test').document('groups').collection('group').snapshots(),
           builder: (context, snapshot) {
