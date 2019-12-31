@@ -8,6 +8,7 @@ import 'package:flutter_app_testing_coding/ThirdRoute.dart';
 import 'package:flutter_app_testing_coding/grouptest.dart';
 import 'schema.dart';
 import 'grouptest.dart';
+import 'mainPage.dart';
 
 //000webhost 1 vxT3yD%NZsB7@ehxs%Cy
 //000webhost 2 eH@94oBGPD!d7#qb
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.deepOrange,
       ),
-      home: _buildPageView(), /**MyHomePage(title: 'Im trying to do stuff in the code'),**/
+      home: MainPageRoute(), /**MyHomePage(title: 'Im trying to do stuff in the code'),**/
 
       initialRoute: '/' ,
       routes: {
