@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_testing_coding/ThirdRoute.dart';
 import 'package:flutter_app_testing_coding/secondRoute.dart';
 import 'package:flutter_app_testing_coding/main.dart';
 import 'package:flutter_app_testing_coding/schema.dart';
@@ -84,6 +85,18 @@ class MyDrawer extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => GroupRoute()),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('3'),
+            onTap: () {
+              // Update the state of the app.
+              // ...
+              Navigator.popUntil(context, ModalRoute.withName('/'));
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ThirdRoute()),
               );
             },
           ),

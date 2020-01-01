@@ -1,4 +1,3 @@
-//JPtGLMerPEEcfuzc
 
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -9,9 +8,6 @@ import 'package:flutter_app_testing_coding/grouptest.dart';
 import 'schema.dart';
 import 'grouptest.dart';
 import 'mainPage.dart';
-
-//000webhost 1 vxT3yD%NZsB7@ehxs%Cy
-//000webhost 2 eH@94oBGPD!d7#qb
 
 void main() => runApp(MyApp());
 

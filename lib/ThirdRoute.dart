@@ -5,7 +5,7 @@ import 'package:flutter_app_testing_coding/main.dart';
 import 'package:flutter_app_testing_coding/schema.dart';
 import 'package:flutter_app_testing_coding/grouptest.dart';
 import 'drawer.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ThirdRoute extends StatelessWidget {
   @override
@@ -88,6 +88,29 @@ class ThirdRoute extends StatelessWidget {
           ),
         ),**/
         body: ListView(children: <Widget>[
+          Row(
+            //mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: RaisedButton(
+                  child: Text('Read'),
+                  onPressed: () {
+                    _read();
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: RaisedButton(
+                  child: Text('Save'),
+                  onPressed: () {
+                    _save();
+                  },
+                ),
+              ),
+            ],
+          ),
           RaisedButton(
             onPressed: () {
               Navigator.push(
@@ -203,5 +226,20 @@ class ThirdRoute extends StatelessWidget {
             child: const Center(child: Text('Entry U')),
           ),
         ]));
+  }
+
+  _read() async {
+    final prefs = await SharedPreferences.getInstance();
+    final key = 'my_int_key';
+    final value = prefs.getInt(key) ?? 0;
+    print('read: $value');
+  }
+
+  _save() async {
+    final prefs = await SharedPreferences.getInstance();
+    final key = 'my_int_key';
+    final value = 42;
+    prefs.setInt(key, value);
+    print('saved $value');
   }
 }
