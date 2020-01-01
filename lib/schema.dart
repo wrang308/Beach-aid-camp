@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_app_testing_coding/main.dart';
@@ -35,37 +33,6 @@ class _schemaState extends State<SchemaRoute> {
     print('day ${day.day[0].day}');
     return day;
   }
-
-
-
-
-  /**Future<List<User>> _getUsers() async{
-
-      //var url = 'https://unparliamentary-sam.000webhostapp.com/hej.php';
-      //var url = 'https://jsonplaceholder.typicode.com/users';
-      var url = 'https://wrang308.github.io/json/schema.json';
-      var data = await http.get(url);
-      var JSONdata = json.decode(data.body);
-      print('usr' + JSONdata.toString());
-
-      Map<String, dynamic> parsed = json.decode(JSONdata);
-
-      /**List<User> users = [];
-
-      for (var u in JSONdata){
-      print('u'+ u.toString());
-      User user = User(u['day'], u['activity']);
-      users.add(user);
-      }
-   **/
-
-      print('hej');
-      print(parsed.length);
-
-      return parsed;
-
-      }**/
-
 
   Widget build(BuildContext context) {
 
@@ -142,42 +109,6 @@ class _schemaState extends State<SchemaRoute> {
         )
     );
 
-
-
-    /**FutureBuilder<List>(
-        future: getData(),
-        builder: (context, snapshot) {
-        return snapshot.hasData
-        ? ListView.builder(
-        itemCount: snapshot.data.length,
-        itemBuilder: (_, int position) {
-
-
-
-
-        return Card(
-        child: ListTile(
-        trailing: Text(snapshot.toString()),
-        ));
-        })
-        : Center(
-        child: CircularProgressIndicator(),
-        );
-        })**/
-
-
-
-    /**
-        return Scaffold(
-        appBar: AppBar(
-        title: Text("Grupp Route"),
-        ),
-        body:
-        FutureBuilder(
-
-        ),
-        //_buildPageView(),
-        );**/
   }
 
   Future getData() async{
@@ -273,10 +204,6 @@ class HeaderRowListView extends StatelessWidget {
     );
   }
 }
-
-
-
-
 
 Widget _buildListItem(BuildContext context, DocumentSnapshot document) {
   return ListTile(

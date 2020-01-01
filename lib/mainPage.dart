@@ -71,39 +71,6 @@ class MainPageRoute extends StatelessWidget {
               ),
             ),
           ]),
-      /**ListView(children: <Widget>[
-          RaisedButton(
-          onPressed: () {
-          Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => MyHomePage()),
-          );
-          },
-          child: Text('Go back!'),
-          ),
-          RaisedButton(
-          onPressed: () {
-          Navigator.popUntil(context, ModalRoute.withName('/'));
-          Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => SchemaRoute()),
-          );
-          },
-          child: Text('Schema'),
-          ),
-          RaisedButton(
-          onPressed: () {
-          Navigator.popUntil(context, ModalRoute.withName('/'));
-          Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => GroupRoute()),
-          );
-          },
-          child: Text('Grupper'),
-          ),
-
-          ])
-       **/
     );
   }
 }
