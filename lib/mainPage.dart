@@ -8,21 +8,13 @@ import 'drawer.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/services.dart';
 
-
-
-
-
-
 class MainPageRoute extends StatefulWidget {
+  const MainPageRoute({Key key}) : super(key: key);
 
-const MainPageRoute({ Key key }) : super(key: key);
-
-_MainPageState createState() => _MainPageState();
-
+  _MainPageState createState() => _MainPageState();
 }
 
 class _MainPageState extends State<MainPageRoute> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,19 +30,19 @@ class _MainPageState extends State<MainPageRoute> {
             ),
 
             /**
-            gradient: LinearGradient(
-              // Where the linear gradient begins and ends
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              // Add one stop for each color. Stops should increase from 0 to 1
-              stops: [0.1, 0.3, 0.7],
-              colors: [
+                gradient: LinearGradient(
+                // Where the linear gradient begins and ends
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                // Add one stop for each color. Stops should increase from 0 to 1
+                stops: [0.1, 0.3, 0.7],
+                colors: [
                 // Colors are easy thanks to Flutter's Colors class.
                 Colors.pink[100],
                 Colors.white,
                 Colors.yellow[100],
-              ],
-            ),**/
+                ],
+                ),**/
           ),
           child: GridView.count(
               primary: false,
@@ -67,12 +59,12 @@ class _MainPageState extends State<MainPageRoute> {
                       MaterialPageRoute(builder: (context) => SchemaRoute()),
                     );
                   }, // handle your onTap here
-                    child: Center(
-                      child: CustomPaint(
-                        painter: CutOutTextPainter(text: 'Schema', color: Colors.cyan),
-                      ),
+                  child: Center(
+                    child: CustomPaint(
+                      painter:
+                          CutOutTextPainter(text: 'Schema', color: Colors.cyan, textSize: 35.0),
                     ),
-
+                  ),
                 ),
                 InkWell(
                   onTap: () {
@@ -84,20 +76,47 @@ class _MainPageState extends State<MainPageRoute> {
                   }, // handle your onTap here
                   child: Center(
                     child: CustomPaint(
-                      painter: CutOutTextPainter(text: 'Group', color: Colors.green),
+                      painter:
+                          CutOutTextPainter(text: 'Group', color: Colors.green, textSize: 35.0),
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.popUntil(context, ModalRoute.withName('/'));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SchemaRoute()),
+                    );
+                  }, // handle your onTap here
+                  child: Center(
+                    child: CustomPaint(
+                      painter:
+                          CutOutTextPainter(text: 'Karta', color: Colors.purple, textSize: 35.0),
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.popUntil(context, ModalRoute.withName('/'));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => GroupRoute()),
+                    );
+                  }, // handle your onTap here
+                  child: Center(
+                    child: CustomPaint(
+                      painter:
+                          CutOutTextPainter(text: 'Sevärdigheter', color: Colors.red, textSize: 24.0),
                     ),
                   ),
                 ),
               ]),
         ));
-
-
-
-
   }
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
@@ -106,7 +125,7 @@ class _MainPageState extends State<MainPageRoute> {
   }
 
   @override
-  dispose(){
+  dispose() {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.landscapeRight,
       DeviceOrientation.landscapeLeft,
@@ -115,16 +134,15 @@ class _MainPageState extends State<MainPageRoute> {
     ]);
     super.dispose();
   }
-
 }
 
 class CutOutTextPainter extends CustomPainter {
-  CutOutTextPainter({this.text, this.color}) {
+  CutOutTextPainter({this.text, this.color, this.textSize}) {
     _textPainter = TextPainter(
       text: TextSpan(
         text: text,
         style: TextStyle(
-          fontSize: 30.0,
+          fontSize: textSize,
           fontWeight: FontWeight.w600,
         ),
       ),
@@ -135,6 +153,7 @@ class CutOutTextPainter extends CustomPainter {
 
   final String text;
   final Color color;
+  final double textSize;
 
   TextPainter _textPainter;
 
@@ -148,11 +167,11 @@ class CutOutTextPainter extends CustomPainter {
     final textRect = textOffset & _textPainter.size;
     print(textOffset.toString());
     print(textRect.toString());
-   Rect myRect = const Offset(0.0, 0.0) & const Size(0.0, 0.0);
+    Rect myRect = const Offset(0.0, 0.0) & const Size(0.0, 0.0);
     print(myRect.toString());
     // The box surrounding the text should be 10 pixels larger, with 4 pixels corner radius
     final boxRect =
-    RRect.fromRectAndRadius(myRect.inflate(75.0), Radius.circular(4.0));
+        RRect.fromRectAndRadius(myRect.inflate(75.0), Radius.circular(4.0));
     final boxPaint = Paint()
       ..color = color
       ..blendMode = BlendMode.srcOut;
