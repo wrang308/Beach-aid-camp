@@ -81,11 +81,14 @@ class _groupState extends State<GroupRoute> {
                 ),
               );
             }
-            return PageView.builder(
+            return ListView.builder(
+
                 itemCount: snapshot.data.group.length,
                 itemBuilder: (BuildContext context, int index){
 
                   return ListView.builder(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
                       itemCount: snapshot.data.group[index].members.length+1,
                       itemBuilder: (BuildContext context2, int index2)
                   {
@@ -93,7 +96,10 @@ class _groupState extends State<GroupRoute> {
                     if (index2 == 0){
 
                       return
-                        ListTile( title: Text(snapshot.data.group[index].groupName));
+                        ListTile( title: Text(snapshot.data.group[index].groupName
+                        ,style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),),);
                     }
 
                     return ListTile(
