@@ -32,6 +32,12 @@ class _MainPageState extends State<MainPageRoute> {
         drawer: MyDrawer(),
         body: Container(
           decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/Arena-Boda-768x457.jpg"),
+              fit: BoxFit.cover,
+            ),
+
+            /**
             gradient: LinearGradient(
               // Where the linear gradient begins and ends
               begin: Alignment.topLeft,
@@ -44,7 +50,7 @@ class _MainPageState extends State<MainPageRoute> {
                 Colors.white,
                 Colors.yellow[100],
               ],
-            ),
+            ),**/
           ),
           child: GridView.count(
               primary: false,
