@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_app_testing_coding/main.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
@@ -87,6 +88,10 @@ class _schemaState extends State<SchemaRoute> {
                 );
               }
               return PageView.builder(
+                controller:  PageController(
+
+                  initialPage: getWeekDay(),
+                  ),
                   itemCount: snapshot.data.day.length,
                   itemBuilder: (BuildContext context, int index){
 
@@ -187,6 +192,13 @@ class _schemaState extends State<SchemaRoute> {
   void initState() {
     loadPerson();
     //getData();
+    getWeekDay();
+  }
+
+  int getWeekDay(){
+    DateTime date = DateTime.now();
+    print('date = ' + date.weekday.toString());
+    return date.weekday-1;
   }
 
 }
