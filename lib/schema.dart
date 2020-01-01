@@ -43,6 +43,21 @@ class _schemaState extends State<SchemaRoute> {
         ),
       drawer: MyDrawer(),
         body: Container(
+          decoration: BoxDecoration(
+            gradient:  LinearGradient(
+              // Where the linear gradient begins and ends
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+              // Add one stop for each color. Stops should increase from 0 to 1
+              stops: [0.1, 0.9],
+              colors: [
+                // Colors are easy thanks to Flutter's Colors class.
+                Colors.amber[100],
+                Colors.cyan[200],
+              ],
+            ),
+          ),
+
           child: FutureBuilder(
             future: loadPerson(),
             builder: (BuildContext context, AsyncSnapshot snapshot){
@@ -124,6 +139,21 @@ class _schemaState extends State<SchemaRoute> {
     loadPerson();
     //getData();
     getWeekDay();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.landscapeLeft,
+    ]);
+  }
+
+  @override
+  dispose(){
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    super.dispose();
   }
 
   int getWeekDay(){
