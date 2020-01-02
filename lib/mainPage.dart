@@ -25,7 +25,7 @@ class _MainPageState extends State<MainPageRoute> {
         body: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/images/Arena-Boda-768x457.jpg"),
+              image: AssetImage("assets/images/hermansyah-7uXn7nudorc-unsplash.jpg"),
               fit: BoxFit.cover,
             ),
 
@@ -107,7 +107,7 @@ class _MainPageState extends State<MainPageRoute> {
                   child: Center(
                     child: CustomPaint(
                       painter:
-                          CutOutTextPainter(text: 'Sevärdigheter', color: Colors.red, textSize: 24.0),
+                          CutOutTextPainter(text: 'Sevärdigheter', color: Colors.white, textSize: 24.0),
                     ),
                   ),
                 ),
