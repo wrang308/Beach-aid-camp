@@ -7,6 +7,8 @@ import 'package:flutter_app_testing_coding/grouptest.dart';
 import 'drawer.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/services.dart';
+import 'turistSaker.dart';
+import 'package:page_transition/page_transition.dart';
 
 class MainPageRoute extends StatefulWidget {
   const MainPageRoute({Key key}) : super(key: key);
@@ -18,11 +20,10 @@ class _MainPageState extends State<MainPageRoute> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Main Page Route"),
-        ),
+        //appBar:
         drawer: MyDrawer(),
-        body: Container(
+        body: Stack(children: <Widget>[
+        Container(
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage("assets/images/hermansyah-7uXn7nudorc-unsplash.jpg"),
@@ -43,10 +44,27 @@ class _MainPageState extends State<MainPageRoute> {
                 Colors.yellow[100],
                 ],
                 ),**/
-          ),
-          child: GridView.count(
+          ),), Container(
+
+            decoration: BoxDecoration(
+            color: Colors.white,
+            gradient: LinearGradient(
+            begin: FractionalOffset.topCenter,
+            end: FractionalOffset.bottomCenter,
+            colors: [
+            Colors.white.withOpacity(0.0),
+            Colors.white.withOpacity(0.3),
+            ],
+            stops: [
+            0.0,
+            1.0
+            ])),
+            ),
+
+            GridView.count(
+
               primary: false,
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.fromLTRB(20,100,20,20),
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
               crossAxisCount: 2,
@@ -56,13 +74,13 @@ class _MainPageState extends State<MainPageRoute> {
                     Navigator.popUntil(context, ModalRoute.withName('/'));
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => SchemaRoute()),
+                      PageTransition(type: PageTransitionType.fade, child: SchemaRoute(), duration: Duration(milliseconds: 500)),
                     );
                   }, // handle your onTap here
                   child: Center(
                     child: CustomPaint(
                       painter:
-                          CutOutTextPainter(text: 'Schema', color: Colors.cyan, textSize: 35.0),
+                          CutOutTextPainter(text: 'Schema', color: Colors.yellow, textSize: 35.0),
                     ),
                   ),
                 ),
@@ -71,13 +89,13 @@ class _MainPageState extends State<MainPageRoute> {
                     Navigator.popUntil(context, ModalRoute.withName('/'));
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => GroupRoute()),
+                      PageTransition(type: PageTransitionType.fade, child: GroupRoute(), duration: Duration(milliseconds: 500)),
                     );
                   }, // handle your onTap here
                   child: Center(
                     child: CustomPaint(
                       painter:
-                          CutOutTextPainter(text: 'Group', color: Colors.green, textSize: 35.0),
+                          CutOutTextPainter(text: 'Grupper', color: Colors.pink[700] , textSize: 35.0),
                     ),
                   ),
                 ),
@@ -86,13 +104,13 @@ class _MainPageState extends State<MainPageRoute> {
                     Navigator.popUntil(context, ModalRoute.withName('/'));
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => SchemaRoute()),
+                        PageTransition(type: PageTransitionType.fade, child: SchemaRoute(), duration: Duration(milliseconds: 500)),
                     );
                   }, // handle your onTap here
                   child: Center(
                     child: CustomPaint(
                       painter:
-                          CutOutTextPainter(text: 'Karta', color: Colors.purple, textSize: 35.0),
+                          CutOutTextPainter(text: 'Karta', color: Colors.green, textSize: 35.0),
                     ),
                   ),
                 ),
@@ -101,18 +119,31 @@ class _MainPageState extends State<MainPageRoute> {
                     Navigator.popUntil(context, ModalRoute.withName('/'));
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => GroupRoute()),
+                        PageTransition(type: PageTransitionType.fade, child: TuristRoute(), duration: Duration(milliseconds: 500))
+                      // MaterialPageRoute(builder: (context) => TuristRoute()),
                     );
                   }, // handle your onTap here
                   child: Center(
                     child: CustomPaint(
                       painter:
-                          CutOutTextPainter(text: 'Sevärdigheter', color: Colors.white, textSize: 24.0),
+                          CutOutTextPainter(text: 'Sevärdigheter', color: Colors.cyan, textSize: 24.0),
                     ),
                   ),
                 ),
               ]),
-        ));
+          new Positioned( //Place it at the top, and not use the entire screen
+            top: 0.0,
+            left: 0.0,
+            right: 0.0,
+            child: AppBar(
+              iconTheme: IconThemeData(color: Colors.black),
+              title: Text('Hello world',
+                style: TextStyle(color: Colors.black),),
+              backgroundColor: Colors.transparent, //No more green
+              elevation: 0.0, //Shadow gone
+            ),),
+        ])
+          );
   }
 
   @override
