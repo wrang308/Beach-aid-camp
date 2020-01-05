@@ -38,38 +38,48 @@ class _schemaState extends State<SchemaRoute> {
 
     return Scaffold(
       //removed
-        appBar: AppBar(
-          title: Text("Schema"),
-        ),
       drawer: MyDrawer(),
-        body: Container(
+        body: Stack(
+          children: <Widget>[
+            Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/images/hermansyah-7uXn7nudorc-unsplash.jpg"),
+                  fit: BoxFit.cover,
+                ),
+
+              ),),
+            Container(
           decoration: BoxDecoration(
             gradient:  LinearGradient(
               // Where the linear gradient begins and ends
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
               // Add one stop for each color. Stops should increase from 0 to 1
-              stops: [0.1, 0.9],
+              stops: [0.1, 0.5 ,0.9],
               colors: [
                 // Colors are easy thanks to Flutter's Colors class.
-                Colors.amber[100],
-                Colors.cyan[200],
+                Colors.white.withOpacity(0.7),
+                Colors.white.withOpacity(0.5),
+                Colors.yellow[200].withOpacity(0.7),
               ],
             ),
           ),
-
-          child: FutureBuilder(
+          ),
+          FutureBuilder(
             future: loadPerson(),
             builder: (BuildContext context, AsyncSnapshot snapshot){
 
               if(snapshot.data == null){
                 return Container(
                   child: Center(
-                    child: Text('Loading...'),
+                    child: CircularProgressIndicator(valueColor:new AlwaysStoppedAnimation<Color>(Colors.yellow,),)
+                    //Text('Loading...'),
                   ),
                 );
               }
               return PageView.builder(
+
                 controller:  PageController(
 
                   initialPage: getWeekDay(),
@@ -78,6 +88,7 @@ class _schemaState extends State<SchemaRoute> {
                   itemBuilder: (BuildContext context, int index){
 
                     return ListView.builder(
+                        padding: const EdgeInsets.fromLTRB(20,100,20,20),
                         itemCount: snapshot.data.day[index].activity.length+1,
                         itemBuilder: (BuildContext context2, int index2)
                         {
@@ -121,6 +132,17 @@ class _schemaState extends State<SchemaRoute> {
             },
 
           ),
+            new Positioned( //Place it at the top, and not use the entire screen
+              top: 0.0,
+              left: 0.0,
+              right: 0.0,
+              child: AppBar(
+                iconTheme: IconThemeData(color: Colors.black),
+                title: Text('Schema',
+                  style: TextStyle(color: Colors.black),),
+                backgroundColor: Colors.transparent, //No more green
+                elevation: 0.0, //Shadow gone
+              ),),],
         )
     );
 

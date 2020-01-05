@@ -48,14 +48,14 @@ class _turistState extends State<TuristRoute> {
           decoration: BoxDecoration(
             gradient:  LinearGradient(
               // Where the linear gradient begins and ends
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
               // Add one stop for each color. Stops should increase from 0 to 1
               stops: [0.1, 0.9],
               colors: [
                 // Colors are easy thanks to Flutter's Colors class.
-                Colors.amber[100].withOpacity(0.0),
-                Colors.yellow[200].withOpacity(0.5),
+                Colors.white.withOpacity(0.5),
+                Colors.blue.withOpacity(0.4),
               ],
             ),
           ),),
