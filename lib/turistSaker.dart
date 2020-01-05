@@ -5,6 +5,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'groups.dart';
+import 'package:flutter_app_testing_coding/drawer.dart';
 
 class TuristRoute extends StatefulWidget {
 
@@ -19,7 +20,8 @@ class _turistState extends State<TuristRoute> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      //removed
+        drawer: MyDrawer(),
+
       body: Stack(
         children: <Widget>[
           Container(
@@ -60,6 +62,7 @@ class _turistState extends State<TuristRoute> {
             ),
           ),),
           ListView(
+            padding: const EdgeInsets.fromLTRB(20,100,20,20),
             children: <Widget>[
               ListTile(
                 leading: CircleAvatar(
@@ -68,6 +71,21 @@ class _turistState extends State<TuristRoute> {
                 title: Text('Byrums Raukar'),
               ),
             ],
+          ),
+          new Positioned(
+            //Place it at the top, and not use the entire screen
+            top: 0.0,
+            left: 0.0,
+            right: 0.0,
+            child: AppBar(
+              iconTheme: IconThemeData(color: Colors.black),
+              title: Text(
+                'Sevärdigheter',
+                style: TextStyle(color: Colors.black),
+              ),
+              backgroundColor: Colors.transparent, //No more green
+              elevation: 0.0, //Shadow gone
+            ),
           ),],)
         );
 

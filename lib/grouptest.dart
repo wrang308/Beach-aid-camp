@@ -5,6 +5,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'groups.dart';
+import 'package:flutter_app_testing_coding/drawer.dart';
 
 class GroupRoute extends StatefulWidget {
   const GroupRoute({Key key}) : super(key: key);
@@ -31,76 +32,101 @@ class _groupState extends State<GroupRoute> {
 
   Widget build(BuildContext context) {
     return Scaffold(
+        drawer: MyDrawer(),
         //removed
         body: Stack(
-      children: <Widget>[
-        Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/hermansyah-7uXn7nudorc-unsplash.jpg"),
-              fit: BoxFit.cover,
+          children: <Widget>[
+            Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                      "assets/images/hermansyah-7uXn7nudorc-unsplash.jpg"),
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
-
-          ),),
-
-        Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              // Where the linear gradient begins and ends
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              // Add one stop for each color. Stops should increase from 0 to 1
-              stops: [0.1, 0.6, 0.9],
-              colors: [
-                // Colors are easy thanks to Flutter's Colors class.
-                Colors.white.withOpacity(0.7),
-                Colors.white.withOpacity(0.5),
-                Colors.pink[200].withOpacity(0.5),
-              ],
+            Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  // Where the linear gradient begins and ends
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  // Add one stop for each color. Stops should increase from 0 to 1
+                  stops: [0.1, 0.6, 0.9],
+                  colors: [
+                    // Colors are easy thanks to Flutter's Colors class.
+                    Colors.white.withOpacity(0.7),
+                    Colors.white.withOpacity(0.5),
+                    Colors.pink[200].withOpacity(0.5),
+                  ],
+                ),
+              ),
             ),
-          ),),
-          FutureBuilder(
-            future: loadPerson(),
-            builder: (BuildContext context, AsyncSnapshot snapshot) {
-              if (snapshot.data == null) {
-                return Container(
-                  child: Center(
-                    child: CircularProgressIndicator(valueColor:new AlwaysStoppedAnimation<Color>(Colors.pink,),)
-                    //Text('Loading...'),
-                  ),
-                );
-              }
-              return ListView.builder(
-                  itemCount: snapshot.data.group.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return ListView.builder(
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemCount:
-                            snapshot.data.group[index].members.length + 1,
-                        itemBuilder: (BuildContext context2, int index2) {
-                          if (index2 == 0) {
-                            return ListTile(
-                              title: Text(
-                                snapshot.data.group[index].groupName,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
+            FutureBuilder(
+              future: loadPerson(),
+              builder: (BuildContext context, AsyncSnapshot snapshot) {
+                if (snapshot.data == null) {
+                  return Container(
+                    child: Center(
+                      child: CircularProgressIndicator(
+                        valueColor: new AlwaysStoppedAnimation<Color>(
+                          Colors.pink,
+                        ),
+                      ),
+                      //Text('Loading...'),
+                    ),
+                  );
+                }
+                return
+                  Container(
+                    margin: EdgeInsets.fromLTRB(0.0, 75.0, 0.0, 0.0),
+                  child: ListView.builder(
+                    padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                    //shrinkWrap: true,
+                    itemCount: snapshot.data.group.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return ListView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount:
+                              snapshot.data.group[index].members.length + 1,
+                          itemBuilder: (BuildContext context2, int index2) {
+                            if (index2 == 0) {
+                              return ListTile(
+                                title: Text(
+                                  snapshot.data.group[index].groupName,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
-                              ),
+                              );
+                            }
+
+                            return ListTile(
+                              title: Text(snapshot
+                                  .data.group[index].members[index2 - 1].name),
                             );
-                          }
-
-                          return ListTile(
-                            title: Text(snapshot
-                                .data.group[index].members[index2 - 1].name),
-                          );
-                        });
-                  });
-            },
-          ),
-
-      ],
-    ));
+                          });
+                    }));
+              },
+            ),
+            new Positioned(
+              //Place it at the top, and not use the entire screen
+              top: 0.0,
+              left: 0.0,
+              right: 0.0,
+              child: AppBar(
+                iconTheme: IconThemeData(color: Colors.black),
+                title: Text(
+                  'Grupper',
+                  style: TextStyle(color: Colors.black),
+                ),
+                backgroundColor: Colors.transparent, //No more green
+                elevation: 0.0, //Shadow gone
+              ),
+            ),
+          ],
+        ));
   }
 
   Future getData() async {
