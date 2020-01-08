@@ -77,8 +77,7 @@ class _groupState extends State<GroupRoute> {
                     ),
                   );
                 }
-                return
-                  Container(
+                return Container(
                     margin: EdgeInsets.fromLTRB(0.0, 75.0, 0.0, 0.0),
                   child: ListView.builder(
                     padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
@@ -119,7 +118,8 @@ class _groupState extends State<GroupRoute> {
                 iconTheme: IconThemeData(color: Colors.black),
                 title: Text(
                   'Grupper',
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(color: Colors.black,
+                    fontSize: 25,),
                 ),
                 backgroundColor: Colors.transparent, //No more green
                 elevation: 0.0, //Shadow gone

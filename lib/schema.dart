@@ -84,8 +84,10 @@ class _schemaState extends State<SchemaRoute> {
                     ),
                     itemCount: snapshot.data.day.length,
                     itemBuilder: (BuildContext context, int index) {
-                      return ListView.builder(
-                          padding: const EdgeInsets.fromLTRB(20, 100, 20, 20),
+                      return Container(
+                          margin: EdgeInsets.fromLTRB(0.0, 75.0, 0.0, 0.0),
+                      child: ListView.builder(
+                          padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                           itemCount:
                               snapshot.data.day[index].activity.length + 1,
                           itemBuilder: (BuildContext context2, int index2) {
@@ -94,7 +96,8 @@ class _schemaState extends State<SchemaRoute> {
                                   child: ListTile(
                                     title: Text(snapshot.data.day[index].day,
                                         style: TextStyle(
-                                            fontWeight: FontWeight.bold)),
+                                            fontWeight: FontWeight.bold,
+                                        fontSize: 25,)),
                                     trailing:
                                         Text(snapshot.data.day[index].date),
                                   ),
@@ -107,20 +110,22 @@ class _schemaState extends State<SchemaRoute> {
 
                             return Container(
                                 child: ListTile(
-                                  title: Text(snapshot.data.day[index]
-                                      .activity[index2 - 1].desc),
-                                  subtitle: Text(snapshot.data.day[index]
-                                          .activity[index2 - 1].starttime +
-                                      '-' +
-                                      snapshot.data.day[index]
-                                          .activity[index2 - 1].endtime),
+                                  title: Text(
+                                    snapshot.data.day[index].activity[index2 - 1].desc,
+                                    style: TextStyle(fontSize: 20),),
+                                  subtitle: Text(
+                                    snapshot.data.day[index].activity[index2 - 1].starttime
+                                    + '-' +
+                                    snapshot.data.day[index].activity[index2 - 1].endtime,
+
+                                  ),
                                 ),
                                 decoration: new BoxDecoration(
                                     border: new Border(
                                         bottom: new BorderSide(
                                   color: Colors.grey[200],
                                 ))));
-                          });
+                          }));
                     });
               },
             ),
@@ -133,7 +138,8 @@ class _schemaState extends State<SchemaRoute> {
                 iconTheme: IconThemeData(color: Colors.black),
                 title: Text(
                   'Schema',
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(color: Colors.black,
+                      fontSize: 25,),
                 ),
                 backgroundColor: Colors.transparent, //No more green
                 elevation: 0.0, //Shadow gone

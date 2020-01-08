@@ -53,10 +53,12 @@ class _MainPageState extends State<MainPageRoute> {
             end: FractionalOffset.bottomCenter,
             colors: [
             Colors.white.withOpacity(0.0),
-            Colors.white.withOpacity(0.3),
+            Colors.white.withOpacity(0.1),
+            Colors.white.withOpacity(0.5),
             ],
             stops: [
             0.0,
+            0.2,
             1.0
             ])),
             ),
@@ -64,7 +66,7 @@ class _MainPageState extends State<MainPageRoute> {
             GridView.count(
 
               primary: false,
-              padding: const EdgeInsets.fromLTRB(20,100,20,20),
+              padding: const EdgeInsets.fromLTRB(20,97,20,20),
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
               crossAxisCount: 2,
@@ -137,8 +139,9 @@ class _MainPageState extends State<MainPageRoute> {
             right: 0.0,
             child: AppBar(
               iconTheme: IconThemeData(color: Colors.black),
-              title: Text('Hello world',
-                style: TextStyle(color: Colors.black),),
+              title: Text('Böda Camp',
+                style: TextStyle(color: Colors.black,
+                fontSize: 25),),
               backgroundColor: Colors.transparent, //No more green
               elevation: 0.0, //Shadow gone
             ),),

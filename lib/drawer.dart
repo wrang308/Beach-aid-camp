@@ -31,7 +31,7 @@ class MyDrawer extends StatelessWidget {
                 colors: [
                   // Colors are easy thanks to Flutter's Colors class.
                   Colors.blue,
-                  Colors.yellow[200],
+                  Colors.yellow[300],
                 ],
               ),
               image: DecorationImage(

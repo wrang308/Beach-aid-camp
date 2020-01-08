@@ -81,7 +81,8 @@ class _turistState extends State<TuristRoute> {
               iconTheme: IconThemeData(color: Colors.black),
               title: Text(
                 'Sevärdigheter',
-                style: TextStyle(color: Colors.black),
+                style: TextStyle(color: Colors.black,
+                  fontSize: 25,),
               ),
               backgroundColor: Colors.transparent, //No more green
               elevation: 0.0, //Shadow gone
