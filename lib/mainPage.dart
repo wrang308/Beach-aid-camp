@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_app_testing_coding/meny.dart';
 import 'package:flutter_app_testing_coding/secondRoute.dart';
 import 'package:flutter_app_testing_coding/main.dart';
 import 'package:flutter_app_testing_coding/schema.dart';
@@ -106,13 +107,13 @@ class _MainPageState extends State<MainPageRoute> {
                     Navigator.popUntil(context, ModalRoute.withName('/'));
                     Navigator.push(
                       context,
-                        PageTransition(type: PageTransitionType.fade, child: SchemaRoute(), duration: Duration(milliseconds: 500)),
+                        PageTransition(type: PageTransitionType.fade, child: MenyRoute(), duration: Duration(milliseconds: 500)),
                     );
                   }, // handle your onTap here
                   child: Center(
                     child: CustomPaint(
                       painter:
-                          CutOutTextPainter(text: 'Karta', color: Colors.green, textSize: 35.0),
+                          CutOutTextPainter(text: 'Meny', color: Colors.green, textSize: 35.0),
                     ),
                   ),
                 ),
