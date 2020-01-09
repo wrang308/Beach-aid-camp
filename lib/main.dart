@@ -9,6 +9,10 @@ import 'schema.dart';
 import 'grouptest.dart';
 import 'mainPage.dart';
 
+import 'dart:io' show Platform;
+
+import 'package:firebase_messaging/firebase_messaging.dart';
+
 void main() => runApp(MyApp());
 
 int _counter = 0;
@@ -47,6 +51,67 @@ class MyApp extends StatelessWidget {
 
     );
   }
+
+  FirebaseMessaging firebaseMessaging = new FirebaseMessaging();
+  @override
+  void initState() {
+    //super.initState();
+    firebaseMessaging.configure(
+      onMessage: (Map<String, dynamic> message) {
+        print('onMessage called: $message');
+      },
+      onResume: (Map<String, dynamic> message) {
+        print('onResume called: $message');
+      },
+      onLaunch: (Map<String, dynamic> message) {
+        print('onLaunch called: $message');
+      },
+    );
+
+    firebaseMessaging.getToken().then((token){
+      print('FCM Token: $token');
+    });
+
+  }
+  /*FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
+
+  @override
+  void initState() {
+    //super.initState();
+    firebaseCloudMessaging_Listeners();
+  }
+
+  void firebaseCloudMessaging_Listeners() {
+    if (Platform.isIOS) iOS_Permission();
+
+    _firebaseMessaging.getToken().then((token){
+      print(token);
+    });
+
+    _firebaseMessaging.configure(
+      onMessage: (Map<String, dynamic> message) async {
+        print('on message $message');
+      },
+      onResume: (Map<String, dynamic> message) async {
+        print('on resume $message');
+      },
+      onLaunch: (Map<String, dynamic> message) async {
+        print('on launch $message');
+      },
+    );
+  }
+
+  void iOS_Permission() {
+    _firebaseMessaging.requestNotificationPermissions(
+        IosNotificationSettings(sound: true, badge: true, alert: true)
+    );
+    _firebaseMessaging.onIosSettingsRegistered
+        .listen((IosNotificationSettings settings)
+    {
+      print("Settings registered: $settings");
+    });
+  }
+*/
 }
 
 final controller = PageController(
