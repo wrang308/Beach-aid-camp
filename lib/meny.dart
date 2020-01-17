@@ -71,7 +71,7 @@ class _menyState extends State<MenyRoute> {
                     child: Center(
                         child: CircularProgressIndicator(
                       valueColor: new AlwaysStoppedAnimation<Color>(
-                        Colors.yellow,
+                        Colors.green,
                       ),
                     )
                         //Text('Loading...'),
