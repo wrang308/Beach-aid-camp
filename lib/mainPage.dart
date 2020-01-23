@@ -9,6 +9,7 @@ import 'drawer.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/services.dart';
 import 'turistSaker.dart';
+import 'karta.dart';
 import 'package:page_transition/page_transition.dart';
 
 class MainPageRoute extends StatefulWidget {
@@ -130,6 +131,21 @@ class _MainPageState extends State<MainPageRoute> {
                     child: CustomPaint(
                       painter:
                           CutOutTextPainter(text: 'Sevärdigheter', color: Colors.cyan, textSize: 24.0),
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.popUntil(context, ModalRoute.withName('/'));
+                    Navigator.push(
+                      context,
+                      PageTransition(type: PageTransitionType.fade, child: KartaRoute(), duration: Duration(milliseconds: 500)),
+                    );
+                  }, // handle your onTap here
+                  child: Center(
+                    child: CustomPaint(
+                      painter:
+                      CutOutTextPainter(text: 'Karta', color: Colors.purple[700] , textSize: 35.0),
                     ),
                   ),
                 ),
