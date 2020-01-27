@@ -148,6 +148,7 @@ class _gardkartaState extends State<GardKartaRoute> {
             Container(
         child: PhotoView(
             imageProvider: AssetImage("assets/images/Bodagarden_karta_2019-1.jpg"),
+          backgroundDecoration: BoxDecoration(color: Colors.blue[100]),
             ),
                /**decoration: BoxDecoration(
                 image: DecorationImage(
