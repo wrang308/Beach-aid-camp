@@ -28,6 +28,7 @@ dependencies:
   auto_size_text: ^2.1.0
   shared_preferences: ^0.5.6
   url_launcher: ^5.4.1
+  photo_view: ^0.9.1
   page_transition: ^1.1.5
   flutter_launcher_icons: ^0.7.3
   # Add the dependency for the Firebase Core Flutter SDK
@@ -70,6 +71,8 @@ flutter:
     - assets/images/hermansyah-7uXn7nudorc-unsplash.jpg
     - assets/images/byrums-raukar-bla-jungfrun.jpg
     - assets/images/kindpng_3712009.png
+    - assets/images/Bodagarden_karta-725x1024.jpg
+    - assets/images/Bodagarden_karta_2019-1.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets
