@@ -70,6 +70,36 @@ class _turistState extends State<TuristRoute> {
                 ),
                 title: Text('Byrums Raukar'),
               ),
+              ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage("assets/images/byrums-raukar-bla-jungfrun.jpg"), // no matter how big it is, it won't overflow
+                ),
+                title: Text('Byxelkrok marknad'),
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage("assets/images/byrums-raukar-bla-jungfrun.jpg"), // no matter how big it is, it won't overflow
+                ),
+                title: Text('Långe Erik'),
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage("assets/images/byrums-raukar-bla-jungfrun.jpg"), // no matter how big it is, it won't overflow
+                ),
+                title: Text('Stenstranden'),
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage("assets/images/byrums-raukar-bla-jungfrun.jpg"), // no matter how big it is, it won't overflow
+                ),
+                title: Text('Kaffestugan'),
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage("assets/images/byrums-raukar-bla-jungfrun.jpg"), // no matter how big it is, it won't overflow
+                ),
+                title: Text('Neptuni Åkrar'),
+              ),
             ],
           ),
           new Positioned(
