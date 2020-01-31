@@ -8,6 +8,9 @@ import 'package:flutter_app_testing_coding/grouptest.dart';
 import 'schema.dart';
 import 'grouptest.dart';
 import 'mainPage.dart';
+import 'meny.dart';
+import 'turistSaker.dart';
+import 'karta.dart';
 
 import 'dart:io' show Platform;
 
@@ -46,7 +49,10 @@ class MyApp extends StatelessWidget {
         '/forth': (context) => ForthRoute(),
         '/fifth': (context) => FifthRoute(),
         '/schema': (context) => SchemaRoute(),
-        '/group': (context) => GroupRoute()
+        '/group': (context) => GroupRoute(),
+        '/meny': (context) => MenyRoute(),
+        '/turistSaker': (context) => TuristRoute(),
+        '/karta': (context) => KartaRoute(),
       },
 
     );

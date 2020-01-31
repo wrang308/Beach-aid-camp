@@ -4,6 +4,9 @@ import 'package:flutter_app_testing_coding/secondRoute.dart';
 import 'package:flutter_app_testing_coding/main.dart';
 import 'package:flutter_app_testing_coding/schema.dart';
 import 'package:flutter_app_testing_coding/grouptest.dart';
+import 'karta.dart';
+import 'meny.dart';
+import 'turistSaker.dart';
 
 class MyDrawer extends StatelessWidget {
   @override
@@ -41,7 +44,7 @@ class MyDrawer extends StatelessWidget {
               ),
             ),
           ),
-          ListTile(
+          /**ListTile(
             title: Text('Item 4'),
             onTap: () {
               // Update the state of the app.
@@ -81,7 +84,7 @@ class MyDrawer extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => FifthRoute()),
               );
             },
-          ),
+          ),**/
           ListTile(
             title: Text('Schema'),
             onTap: () {
@@ -96,7 +99,7 @@ class MyDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text('grupp'),
+            title: Text('Grupper'),
             onTap: () {
               // Update the state of the app.
               // ...
@@ -108,33 +111,42 @@ class MyDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text('3'),
+            title: Text('Mat'),
             onTap: () {
               // Update the state of the app.
               // ...
               Navigator.popUntil(context, ModalRoute.withName('/'));
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ThirdRoute()),
+                MaterialPageRoute(builder: (context) => MenyRoute()),
               );
             },
           ),
           ListTile(
-            title: Text('PoP'),
+            title: Text('Sevärdigheter'),
             onTap: () {
               // Update the state of the app.
               // ...
-              Navigator.pop(context);
+              Navigator.popUntil(context, ModalRoute.withName('/'));
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => TuristRoute()),
+              );
             },
           ),
           ListTile(
-            title: Text('Heskan'),
+            title: Text('Karta'),
             onTap: () {
               // Update the state of the app.
               // ...
-Navigator.popUntil(context, ModalRoute.withName('/'));
+              Navigator.popUntil(context, ModalRoute.withName('/'));
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => KartaRoute()),
+              );
             },
           ),
+
         ],
       ),
     );
