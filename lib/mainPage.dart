@@ -114,7 +114,7 @@ class _MainPageState extends State<MainPageRoute> {
                   child: Center(
                     child: CustomPaint(
                       painter:
-                          CutOutTextPainter(text: 'Meny', color: Colors.green, textSize: 35.0),
+                          CutOutTextPainter(text: 'Mat', color: Colors.green, textSize: 35.0),
                     ),
                   ),
                 ),
