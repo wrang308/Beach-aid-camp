@@ -156,7 +156,7 @@ class _MainPageState extends State<MainPageRoute> {
             right: 0.0,
             child: AppBar(
               iconTheme: IconThemeData(color: Colors.black),
-              title: Text('Böda Camp',
+              title: Text('Beach aid Camp',
                 style: TextStyle(color: Colors.black,
                 fontSize: 25),),
               backgroundColor: Colors.transparent, //No more green

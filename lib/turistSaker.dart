@@ -62,8 +62,8 @@ class _turistState extends State<TuristRoute> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    PageTransition(type: PageTransitionType.fade, child: BuildLocationPage('Byrums Raukar', "https://www.google.com/maps/place/Byrums+Raukar/@57.2214807,16.8921709,13z/data=!4m5!3m4!1s0x0:0x81db9163efb180d5!8m2!3d57.2237034!4d16.952666", "assets/images/43858429220_07a30ea7a8_c.jpg", "Ölands enda raukar bara ett stenkast från Böda, åk"
-                        " dit och njut av när solen går ned över Blå jungfrun. "), duration: Duration(milliseconds: 500)),
+                    PageTransition(type: PageTransitionType.fade, child: BuildLocationPage('Byrums Raukar', "https://www.google.com/maps/place/Byrums+Raukar/@57.2214807,16.8921709,13z/data=!4m5!3m4!1s0x0:0x81db9163efb180d5!8m2!3d57.2237034!4d16.952666", "assets/images/43858429220_07a30ea7a8_c.jpg",
+                        "Ölands enda raukar bara ett stenkast från Böda, ta med en filt, passa på och se dessa unika stenformationer och njut av när solen går ned över Blå jungfrun."), duration: Duration(milliseconds: 500)),
                   );
                 }
               ),
@@ -77,7 +77,8 @@ class _turistState extends State<TuristRoute> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      PageTransition(type: PageTransitionType.fade, child: BuildLocationPage('Byxelkroks sjöbodar', "https://www.google.com/maps/place/Byxelkroks+hamn/@57.3281751,17.0067777,19z/data=!4m5!3m4!1s0x4657d17b4478d1a7:0x62357b2bd0f69be7!8m2!3d57.3275793!4d17.0063129", "assets/images/640px-Byxelkrok.jpg", ""), duration: Duration(milliseconds: 500)),
+                      PageTransition(type: PageTransitionType.fade, child: BuildLocationPage('Byxelkroks sjöbodar', "https://www.google.com/maps/place/Byxelkroks+hamn/@57.3281751,17.0067777,19z/data=!4m5!3m4!1s0x4657d17b4478d1a7:0x62357b2bd0f69be7!8m2!3d57.3275793!4d17.0063129", "assets/images/640px-Byxelkrok.jpg",
+                          "I byxelkrok så finns det en pittoresk marknad i hamnen. Man kan hitta allt ifrån loppis saker, hantverk, smycken och anna kuriosa. Är du sugen på att komma till en mysig marknad så är detta stället."), duration: Duration(milliseconds: 500)),
                     );
                   }
               ),
@@ -91,7 +92,8 @@ class _turistState extends State<TuristRoute> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      PageTransition(type: PageTransitionType.fade, child: BuildLocationPage("Långe Erik", "https://www.google.com/maps/place/L%C3%A5nge+Erik/@57.3711675,17.0834825,14z/data=!4m5!3m4!1s0x46f7fd21d6518bf7:0xf07d28a00dce7311!8m2!3d57.3663281!4d17.0978755", "assets/images/Lange_Erik_-_panoramio.jpg" ,""), duration: Duration(milliseconds: 500)),
+                      PageTransition(type: PageTransitionType.fade, child: BuildLocationPage("Långe Erik", "https://www.google.com/maps/place/L%C3%A5nge+Erik/@57.3711675,17.0834825,14z/data=!4m5!3m4!1s0x46f7fd21d6518bf7:0xf07d28a00dce7311!8m2!3d57.3663281!4d17.0978755", "assets/images/Lange_Erik_-_panoramio.jpg" ,
+                          "Längst ut på Ölands norra udde ligger Långe Erik, en 32 meter hög fyr av kalksten. Långe Erik och dess omgivningar erbjuder unik miljö och enastående utsikt. "), duration: Duration(milliseconds: 500)),
                     );
                   }
               ),
@@ -105,7 +107,8 @@ class _turistState extends State<TuristRoute> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      PageTransition(type: PageTransitionType.fade, child: BuildLocationPage('Stenstranden', "https://www.google.com/maps/place/Fornbo/@57.2025551,16.9042714,15z/data=!4m12!1m6!3m5!1s0x46f7fd8461e8f189:0x680656ae4af7572f!2sNeptuni+%C3%85krar!8m2!3d57.3463608!4d17.0267669!3m4!1s0x0:0x5525485c1644913b!8m2!3d57.2036729!4d16.9162041", "assets/images/DSC_4532.JPG", ""), duration: Duration(milliseconds: 500)),
+                      PageTransition(type: PageTransitionType.fade, child: BuildLocationPage('Stenstranden', "https://www.google.com/maps/place/Fornbo/@57.2025551,16.9042714,15z/data=!4m12!1m6!3m5!1s0x46f7fd8461e8f189:0x680656ae4af7572f!2sNeptuni+%C3%85krar!8m2!3d57.3463608!4d17.0267669!3m4!1s0x0:0x5525485c1644913b!8m2!3d57.2036729!4d16.9162041", "assets/images/DSC_4532.JPG",
+                          "Stenar + strand = stenstrand. En fin strand nedanför en klippa med mjuka stenar att sitta på och njuta av utsikten. Ligger bara ett stenkast frn Byrum raukar."), duration: Duration(milliseconds: 500)),
                     );
                   }
               ),
@@ -119,7 +122,8 @@ class _turistState extends State<TuristRoute> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      PageTransition(type: PageTransitionType.fade, child: BuildLocationPage("Kaffestugan","https://www.google.com/maps/place/Kaffestugan+i+B%C3%B6da+AB/@57.2420228,17.0536091,15z/data=!4m5!3m4!1s0x46f7ff1877b429f7:0xf76396acf2e99277!8m2!3d57.2461205!4d17.058852","assets/images/kaffestugan_1.jpg" , ""), duration: Duration(milliseconds: 500)),
+                      PageTransition(type: PageTransitionType.fade, child: BuildLocationPage("Kaffestugan","https://www.google.com/maps/place/Kaffestugan+i+B%C3%B6da+AB/@57.2420228,17.0536091,15z/data=!4m5!3m4!1s0x46f7ff1877b429f7:0xf76396acf2e99277!8m2!3d57.2461205!4d17.058852","assets/images/kaffestugan_1.jpg" ,
+                          "Kommer fikasuget fram så passar det perfekt att ta en tur förbi Kaffestugan. Med egenrostat kaffe, surdegsbröd, bullar bakelser och allt vad ett cafe bör ha så finns det garanterat något för dig. Varför inte svänga förbi på en frukost för att ladda upp för en dag på beachen."), duration: Duration(milliseconds: 500)),
                     );
                   }
               ),
@@ -133,7 +137,8 @@ class _turistState extends State<TuristRoute> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      PageTransition(type: PageTransitionType.fade, child: BuildLocationPage("Neptuni Åkrar", 'https://www.google.com/maps/place/Neptuni+%C3%85krar/@57.3463608,17.0245782,17z/data=!3m1!4b1!4m5!3m4!1s0x46f7fd8461e8f189:0x680656ae4af7572f!8m2!3d57.3463608!4d17.0267669', "assets/images/37233585250_f7d0927be6_c.jpg", ""), duration: Duration(milliseconds: 500)),
+                      PageTransition(type: PageTransitionType.fade, child: BuildLocationPage("Neptuni Åkrar", 'https://www.google.com/maps/place/Neptuni+%C3%85krar/@57.3463608,17.0245782,17z/data=!3m1!4b1!4m5!3m4!1s0x46f7fd8461e8f189:0x680656ae4af7572f!8m2!3d57.3463608!4d17.0267669', "assets/images/37233585250_f7d0927be6_c.jpg",
+                          "Neptuni åkrar fick sitt namn av Carl von Linné redan 1741. Här finns det långa strandvallar täckta av blåeld där man kan njuta av solens sista glimtar en sommarkväll. Om du har tur så kanske du kan se Neptunus treudd."), duration: Duration(milliseconds: 500)),
                     );
                   }
               ),
@@ -175,10 +180,10 @@ class BuildLocationPage extends StatefulWidget {
   BuildLocationPage(this.title, this.url, this.imageUrl, this.desc);
 
   @override
-  _locationState createState() => _locationState();
+  _LocationState createState() => _LocationState();
 }
 
-class _locationState extends State<BuildLocationPage> {
+class _LocationState extends State<BuildLocationPage> {
 
   @override
   Widget build(BuildContext context) {
